@@ -1,0 +1,14 @@
+*.py[codz]
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.pdm-python
+.venv/
+# local data and runtime artifacts
+regdocs.db
+audit.log
+# agent working notes
+.superpowers/
+# model weights
+models/

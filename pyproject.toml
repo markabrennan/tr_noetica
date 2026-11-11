@@ -1,0 +1,36 @@
+[project]
+name = "tr_noetica"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Mark Brennan",email = "markangusbrennan@gmail.com"},
+]
+dependencies = ["httpx>=0.28.1", "numpy>=2.5.4"]
+requires-python = "==3.14.*"
+readme = "README.md"
+license = "MIT"
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[dependency-groups]
+test = [
+    "pytest>=9.2.0",
+]
+lint = [
+    "ruff>=0.17.4",
+]
+
+[tool.pdm.scripts]
+chat = {cmd = "python -m noetica.chat", env = {PYTHONPATH = "src"}}
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
